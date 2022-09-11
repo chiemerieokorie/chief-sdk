@@ -2,11 +2,13 @@
   "name": "chief-sdk",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "tsc"
   },
-  "author": "",
+  "author": "chief.emerie",
+  "keywords": ["SDK","Lord of the Rings"],
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2"
