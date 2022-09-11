@@ -14,3 +14,7 @@ export default function makeBase<T>({store}: T) {
         }
     }
 }
+
+interface IBase {
+    getAll: (params?: object) => void;
+}
