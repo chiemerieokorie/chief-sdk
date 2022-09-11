@@ -2,10 +2,11 @@ import makeBase from "./Base";
 
 // @ts-ignore
 export default function makeBook<T>({store}: T) {
-    const Base = makeBase({store})({entity: 'book'})
+    const entity = 'book'
+    const Base = makeBase({store})({entity})
     return Object.assign(Base, {
         getChapter(id: number, params: any) {
-            return store.get(`book/${id}/chapter`, params)
+            return store.get(`${entity}/${id}/chapter`, params)
         }
     })
 }

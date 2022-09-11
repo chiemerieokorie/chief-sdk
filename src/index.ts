@@ -1,5 +1,9 @@
 import APIClient from '../src/APIClient'
 import makeBook from "./entities/Book";
+import makeChapter from "./entities/Chapter";
+import makeCharacter from "./entities/Character";
+import makeMovie from "./entities/Movie";
+import makeQuote from "./entities/Quote";
 
 function LOTR({apiKey}: { apiKey: string; }) {
     const store = APIClient({token: apiKey})
@@ -7,7 +11,20 @@ function LOTR({apiKey}: { apiKey: string; }) {
     const SDK =  {
         get Book() {
             return makeBook<{ store: typeof store }>({store})
-        }
+        },
+        get Chapter() {
+            return makeChapter<{ store: typeof store }>({store})
+        },
+        get Character() {
+            return makeCharacter<{ store: typeof store }>({store})
+        },
+        get Movie() {
+            return makeMovie<{ store: typeof store }>({store})
+        },
+        get Quote() {
+            return makeQuote<{ store: typeof store }>({store})
+        },
+
     }
 
     //
