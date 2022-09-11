@@ -5,7 +5,7 @@ export default function makeBook<T>({store}: T) {
     const entity = 'book'
     const Base = makeBase({store})({entity})
     return Object.assign(Base, {
-        getChapter(id: number, params: any) {
+        getChapters(id: number, params: any) {
             return store.get(`${entity}/${id}/chapter`, params)
         }
     })
